@@ -107,6 +107,8 @@ The winner will be determined by the submission that achieves the best average r
 4. Leaderboard updated within 24 hours
 
 Good luck, and may the best aggregation strategy win! 
+## Resources
+Convex Adversarial Collective Classification ;MohamadAli Torkamani, Daniel Lowd Proceedings of the 30th International Conference on Machine Learning, PMLR 28(1):642-650, 2013.
 
 ---
 PS: the code used to create the challenge dataset is defined in challenge_data notebook , as a participants please ignore it.
