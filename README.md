@@ -113,6 +113,8 @@ Convex Adversarial Collective Classification ;MohamadAli Torkamani, Daniel Lowd 
 
 Adversarial Training for Graph Neural Networks: Pitfalls, Solutions, and New Directions Lukas Gosch, Simon Geisler, Daniel Sturm, Bertrand Charpentier, Daniel Zügner, Stephan Günnemann
 
+The Reason Why Cancer is so Hard to Beat -Kurzgesagt – In a Nutshell
+
 ---
 PS: the code used to create the challenge dataset is defined in challenge_data notebook , as a participants please ignore it.
 
