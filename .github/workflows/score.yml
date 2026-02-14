@@ -53,7 +53,7 @@ jobs:
 
           # 6️⃣ Regenerate leaderboard.md from CSV
       - name: Render Markdown leaderboard
-        run: python competition/render_leaderboard.py
+        run: python render_leaderboard.py
 
       # 7️⃣ Update leaderboard
       - name: Update leaderboard
