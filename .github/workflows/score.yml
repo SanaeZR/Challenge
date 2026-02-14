@@ -49,4 +49,10 @@ jobs:
       # 7️⃣ Update leaderboard
       - name: Update leaderboard
         run: python update_leaderboard.py
- 
+      - name: Commit updated leaderboard (PR branch only)
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add leaderboard.md
+          git commit -m "Update leaderboard from workflow" || echo "No changes to commit"
+          git push origin HEAD
