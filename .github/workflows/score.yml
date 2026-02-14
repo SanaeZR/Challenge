@@ -49,3 +49,11 @@ jobs:
       # 7️⃣ Update leaderboard
       - name: Update leaderboard
         run: python update_leaderboard.py
+      # 8️⃣ Commit & push leaderboard back to repo
+      - name: Commit & push updated leaderboard
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add leaderboard.md
+          git commit -m "Update leaderboard from workflow" || echo "No changes to commit"
+          git push origin HEAD:${{ github.ref }}
