@@ -71,7 +71,6 @@ Please review the baseline code to help you better navigate the data.
 ---
 
 
----
 
 ## 🚫 Constraints
 
