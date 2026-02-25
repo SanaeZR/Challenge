@@ -66,9 +66,9 @@ function renderTable(data) {
 
         // Rank display (medals for top 3)
         const rankDisplay =
-            index === 0 ? "🥇" :
-            index === 1 ? "🥈" :
-            index === 2 ? "🥉" :
+            index === 0 ? "1 🥇" :
+            index === 1 ? "2 🥈" :
+            index === 2 ? "2 🥉" :
             index + 1;
 
         tr.innerHTML = `

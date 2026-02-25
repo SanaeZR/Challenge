@@ -59,6 +59,7 @@ body {
     color: var(--text);
     font-family: system-ui, sans-serif;
     min-height: 100vh;
+    text-align: center;
 }
 
 .page {
