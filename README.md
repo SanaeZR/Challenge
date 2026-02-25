@@ -11,7 +11,7 @@ For most neural networks, classification tasks are made individually based on th
 
 ### 💡 The Core Question
 
-**This raises an important question: what should a model do when there is a contradiction between the information provided by a node's embedding and the information coming from its neighborhood? AKA adversary learning**
+**This raises an important question: what should a model do when there is a contradiction between the information provided by a node's embedding and the information coming from its neighborhood? aka adversary learning**
 
 ---
 ![Alt text](picture.png)
@@ -48,10 +48,9 @@ You can read more about this data source on https://ngdc.cncb.ac.cn/cancerscem/i
 As for this task, we have altered samples from this data to present it for a  GNN training tasks, you will be given:
 
 ### 🔗 **A (Adjacency Matrix)**
-- **Absolute truth** ✓
-- Contains information about the connections and structure of your input graph
-- This is your reliable source for understanding interractions between the cells , you are encouraged to read about cancer cells behavior for a better solution!
-
+- Encodes the connections and structure of your input graph.
+- Most connections reflect real interactions between cells, but some edges may have been altered, introducing noise.
+  
 ### 📈 **X (Node Embeddings)**
 - Embeddings of nodes == Genes encodings
 - ⚠️ **Some nodes have been corrupted to trick you!**
@@ -61,23 +60,15 @@ As for this task, we have altered samples from this data to present it for a  GN
 - Gives you a hint about which nodes have been corrupted
 - Available in `train.csv`
 - **NOT available in `test.csv`** (this is what you need to test on)
+- The corruption mask may be used only during training to modulate aggregation, weighting, or attention — not to filter nodes or labels.
 
 ### 📁 **Data Files**
-- **`train.npz`** - Contains features AND corruption mask(part1)
+- **`train.npz`** - Contains features AND corruption mask.
 - **`test.csv`** - Contains features only (no labels, no mask)
 - **`labels.csv`** - Contains labels for the full training data
 - **`edges.csv`** - Describes the communication between the cells
-  For dimentions issues we split the training data features in two , you would find additional code to help you import the data as a dataframe.
+Please review the baseline code to help you better navigate the data.
 ---
-
-##  Example Techniques
-
-You can use the notebook in baseline as your starting point! It is a simple example solution  that I made!
-We want the GNN to  learn when to rely on a node’s own features versus its neighbors’ right ?. An example of a solution is a trainable gate mechanism that dynamically balances these two signals, adapting to potential feature corruption without modifying the fixed embeddings. The model is trained on the provided graph and features, then predicts on test data using the same adaptive trust logic.
-You can use the same GNN as your baseline model , same for the training loop , get creative with your aggregation mecanism!
-
----
-
 ## 🚫 Constraints
 
 ###  You CANNOT
@@ -91,7 +82,7 @@ You can use the same GNN as your baseline model , same for the training loop , g
 - Design custom aggregation functions
 - Use attention mechanisms
 - Combine multiple GNN layers strategically
-- Look up additional resources to understand the bahavior of the cancerous cells.
+- Look up additional resources to understand the behavior of the cancerous cells.
 ---
 
 ##  Your Mission ✨✨
@@ -110,11 +101,14 @@ Check the leaderboard to see other's rankings : https://noormajdoub.github.io/Ch
 ###  Submission Process
 
 1. Fork this repository
-2. Add your predictions: `submissions/submission_<username>.csv`
+2. Add your predictions: `submissions/submission_<username>.csv`  (create the submissions folder and put your csv file in it)
 3. Create Pull Request:
    *Base : Main
+   
    *Name Submission: <your_username>
+   
    *Compare: your fork/branch with the submission file
+4. Merge 
 5. Leaderboard updated within 24 hours :https://noormajdoub.github.io/Challenge/ 
 
 Good luck, and may the best aggregation strategy win! 
@@ -133,5 +127,4 @@ Cancer Single-cell Expression Map
 Graph Neural Networks in Cancer and Oncology Research: Emerging and Future Trends Grigoriy Gogoshin 1,*, Andrei S Rodin 1,
 
 ---
-PS: the code used to create the challenge dataset is defined in challenge_data notebook , as a participants please ignore it.
 
